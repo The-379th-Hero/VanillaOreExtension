@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"normal": {
+			"model": "voree:bone_ore"
+		}
+	}
+}

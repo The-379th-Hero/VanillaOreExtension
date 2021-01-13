@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"normal": {
+			"model": "voree:nether_gold_ore"
+		}
+	}
+}

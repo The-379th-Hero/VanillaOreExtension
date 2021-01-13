@@ -1,0 +1,16 @@
+[
+{
+  "modid": "voree",
+  "name": "Vanilla Ore Extension",
+  "description": "Adds a Few Ore that Drop Vanilla Items",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["gayannabeth"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
