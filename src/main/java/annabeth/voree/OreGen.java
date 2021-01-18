@@ -16,65 +16,65 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class OreGen implements IWorldGenerator {
-	private final WorldGenerator GLOWSTONE_ORE;
-	private final WorldGenerator OVERWORLD_QUARTZ_ORE;
-	private final WorldGenerator PRISMARINE_ORE;
-	private final WorldGenerator FLINT_ORE;
-	private final WorldGenerator BONE_ORE;
-	private final WorldGenerator NETHER_BONE_ORE;
-	private final WorldGenerator NETHER_WART_ORE;
-	private final WorldGenerator NETHER_COAL_ORE;
-	private final WorldGenerator PURPUR_ORE;
-	private final WorldGenerator BLAZE_POWDER_ORE;
-	private final WorldGenerator NETHER_GOLD_ORE;
+	private WorldGenerator GLOWSTONE_ORE;
+	private WorldGenerator OVERWORLD_QUARTZ_ORE;
+	private WorldGenerator PRISMARINE_ORE;
+	private WorldGenerator FLINT_ORE;
+	private WorldGenerator BONE_ORE;
+	private WorldGenerator NETHER_BONE_ORE;
+	private WorldGenerator NETHER_WART_ORE;
+	private WorldGenerator NETHER_COAL_ORE;
+	private WorldGenerator PURPUR_ORE;
+	private WorldGenerator BLAZE_POWDER_ORE;
+	private WorldGenerator NETHER_GOLD_ORE;
 	
 	public OreGen() {
 		VoreeMain.logger.info("Creating Ore Genrator");
-		this.GLOWSTONE_ORE = new WorldGenMinable(ModBlocks.GLOWSTONE_ORE.getDefaultState(), 7, BlockMatcher.forBlock(Blocks.NETHERRACK));
-		this.OVERWORLD_QUARTZ_ORE = new WorldGenMinable(ModBlocks.OVERWORLD_QUARTZ_ORE.getDefaultState(), 9, BlockMatcher.forBlock(Blocks.STONE));
-		this.PRISMARINE_ORE = new WorldGenMinable(ModBlocks.PRISMARINE_ORE.getDefaultState(), 9, BlockMatcher.forBlock(Blocks.STONE));
-		this.FLINT_ORE = new WorldGenMinable(ModBlocks.FLINT_ORE.getDefaultState(), 17, BlockMatcher.forBlock(Blocks.STONE));
-		this.BONE_ORE = new WorldGenMinable(ModBlocks.BONE_ORE.getDefaultState(), 13, BlockMatcher.forBlock(Blocks.STONE));
-		this.NETHER_BONE_ORE = new WorldGenMinable(ModBlocks.NETHER_BONE_ORE.getDefaultState(), 13, BlockMatcher.forBlock(Blocks.NETHERRACK));
-		this.NETHER_WART_ORE = new WorldGenMinable(ModBlocks.NETHER_WART_ORE.getDefaultState(), 10, BlockMatcher.forBlock(Blocks.SOUL_SAND));
-		this.NETHER_COAL_ORE = new WorldGenMinable(ModBlocks.NETHER_COAL_ORE.getDefaultState(), 17, BlockMatcher.forBlock(Blocks.NETHERRACK));
-		this.PURPUR_ORE = new WorldGenMinable(ModBlocks.PURPUR_ORE.getDefaultState(), 9, BlockMatcher.forBlock(Blocks.END_STONE));
-		this.BLAZE_POWDER_ORE = new WorldGenMinable(ModBlocks.BLAZE_POWDER_ORE.getDefaultState(), 11, BlockMatcher.forBlock(Blocks.NETHERRACK));
-		this.NETHER_GOLD_ORE = new WorldGenMinable(ModBlocks.NETHER_GOLD_ORE.getDefaultState(), 10, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		if (Config.GLOWSTONE_ORE) this.GLOWSTONE_ORE = new WorldGenMinable(ModBlocks.GLOWSTONE_ORE.getDefaultState(), 7, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		if (Config.QUARTZ_ORE) this.OVERWORLD_QUARTZ_ORE = new WorldGenMinable(ModBlocks.OVERWORLD_QUARTZ_ORE.getDefaultState(), 9, BlockMatcher.forBlock(Blocks.STONE));
+		if (Config.PRISMARINE_ORE) this.PRISMARINE_ORE = new WorldGenMinable(ModBlocks.PRISMARINE_ORE.getDefaultState(), 9, BlockMatcher.forBlock(Blocks.STONE));
+		if (Config.FLINT_ORE) this.FLINT_ORE = new WorldGenMinable(ModBlocks.FLINT_ORE.getDefaultState(), 17, BlockMatcher.forBlock(Blocks.STONE));
+		if (Config.BONE_ORE) this.BONE_ORE = new WorldGenMinable(ModBlocks.BONE_ORE.getDefaultState(), 13, BlockMatcher.forBlock(Blocks.STONE));
+		if (Config.NETHER_BONE_ORE) this.NETHER_BONE_ORE = new WorldGenMinable(ModBlocks.NETHER_BONE_ORE.getDefaultState(), 13, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		if (Config.NETHER_WART_ORE) this.NETHER_WART_ORE = new WorldGenMinable(ModBlocks.NETHER_WART_ORE.getDefaultState(), 10, BlockMatcher.forBlock(Blocks.SOUL_SAND));
+		if (Config.NETHER_COAL_ORE) this.NETHER_COAL_ORE = new WorldGenMinable(ModBlocks.NETHER_COAL_ORE.getDefaultState(), 17, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		if (Config.PURPUR_ORE) this.PURPUR_ORE = new WorldGenMinable(ModBlocks.PURPUR_ORE.getDefaultState(), 9, BlockMatcher.forBlock(Blocks.END_STONE));
+		if (Config.BLAZE_POWDER_ORE) this.BLAZE_POWDER_ORE = new WorldGenMinable(ModBlocks.BLAZE_POWDER_ORE.getDefaultState(), 11, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		if (Config.NETHER_GOLD_ORE) this.NETHER_GOLD_ORE = new WorldGenMinable(ModBlocks.NETHER_GOLD_ORE.getDefaultState(), 10, BlockMatcher.forBlock(Blocks.NETHERRACK));
 	}
 	
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		switch (world.provider.getDimensionType()) {
 			case NETHER:
-				this.generateOres(this.BLAZE_POWDER_ORE, world, random, chunkX, chunkZ, 5, 16, 64);
-				this.generateOres(this.GLOWSTONE_ORE, world, random, chunkX, chunkZ, 6, 0, 48);
-				this.generateOres(this.NETHER_BONE_ORE, world, random, chunkX, chunkZ, 8, 0, 128);
-				this.generateOres(this.NETHER_COAL_ORE, world, random, chunkX, chunkZ, 12, 0, 128);
-				this.generateOres(this.NETHER_GOLD_ORE, world, random, chunkX, chunkZ, 10, 10, 117);
-				this.generateOres(this.NETHER_WART_ORE, world, random, chunkX, chunkZ, 3, 4, 87);
+				if (Config.BLAZE_POWDER_ORE) this.generateOres(this.BLAZE_POWDER_ORE, world, random, chunkX, chunkZ, 5, 16, 64);
+				if (Config.GLOWSTONE_ORE) this.generateOres(this.GLOWSTONE_ORE, world, random, chunkX, chunkZ, 6, 0, 48);
+				if (Config.NETHER_BONE_ORE) this.generateOres(this.NETHER_BONE_ORE, world, random, chunkX, chunkZ, 8, 0, 128);
+				if (Config.NETHER_COAL_ORE) this.generateOres(this.NETHER_COAL_ORE, world, random, chunkX, chunkZ, 12, 0, 128);
+				if (Config.NETHER_GOLD_ORE) this.generateOres(this.NETHER_GOLD_ORE, world, random, chunkX, chunkZ, 10, 10, 117);
+				if (Config.NETHER_WART_ORE) this.generateOres(this.NETHER_WART_ORE, world, random, chunkX, chunkZ, 3, 4, 87);
 				break;
 			case OVERWORLD:
-				this.generateOres(this.BONE_ORE, world, random, chunkX, chunkZ, 8, 0, 128);
-				this.generateOres(this.FLINT_ORE, world, random, chunkX, chunkZ, 7, 20, 100);
-				this.generateOres(this.OVERWORLD_QUARTZ_ORE, world, random, chunkX, chunkZ, 2, 4, 24);
-				this.generatePrisOres(this.PRISMARINE_ORE, world, random, chunkX, chunkZ, 4, 6, 48);
+				if (Config.BONE_ORE) this.generateOres(this.BONE_ORE, world, random, chunkX, chunkZ, 8, 0, 128);
+				if (Config.FLINT_ORE) this.generateOres(this.FLINT_ORE, world, random, chunkX, chunkZ, 7, 20, 100);
+				if (Config.QUARTZ_ORE) this.generateOres(this.OVERWORLD_QUARTZ_ORE, world, random, chunkX, chunkZ, 2, 4, 24);
+				if (Config.PRISMARINE_ORE) this.generatePrisOres(this.PRISMARINE_ORE, world, random, chunkX, chunkZ, 4, 6, 48);
 				break;
 			case THE_END:
-				this.generateOres(this.PURPUR_ORE, world, random, chunkX, chunkZ, 10, 0, 255);
+				if (Config.PURPUR_ORE) this.generateOres(this.PURPUR_ORE, world, random, chunkX, chunkZ, 10, 0, 255);
 				break;
 			default:
-				this.generateOres(this.BLAZE_POWDER_ORE, world, random, chunkX, chunkZ, 5, 16, 64);
-				this.generateOres(this.GLOWSTONE_ORE, world, random, chunkX, chunkZ, 6, 0, 48);
-				this.generateOres(this.NETHER_BONE_ORE, world, random, chunkX, chunkZ, 8, 0, 128);
-				this.generateOres(this.NETHER_COAL_ORE, world, random, chunkX, chunkZ, 12, 0, 128);
-				this.generateOres(this.NETHER_GOLD_ORE, world, random, chunkX, chunkZ, 10, 10, 117);
-				this.generateOres(this.NETHER_WART_ORE, world, random, chunkX, chunkZ, 3, 4, 87);
-				this.generateOres(this.BONE_ORE, world, random, chunkX, chunkZ, 8, 0, 128);
-				this.generateOres(this.FLINT_ORE, world, random, chunkX, chunkZ, 7, 20, 100);
-				this.generateOres(this.OVERWORLD_QUARTZ_ORE, world, random, chunkX, chunkZ, 2, 4, 24);
-				this.generateOres(this.PURPUR_ORE, world, random, chunkX, chunkZ, 10, 0, 255);
-				this.generatePrisOres(this.PRISMARINE_ORE, world, random, chunkX, chunkZ, 4, 6, 48);
+				if (Config.BLAZE_POWDER_ORE) this.generateOres(this.BLAZE_POWDER_ORE, world, random, chunkX, chunkZ, 5, 16, 64);
+				if (Config.GLOWSTONE_ORE) this.generateOres(this.GLOWSTONE_ORE, world, random, chunkX, chunkZ, 6, 0, 48);
+				if (Config.NETHER_BONE_ORE) this.generateOres(this.NETHER_BONE_ORE, world, random, chunkX, chunkZ, 8, 0, 128);
+				if (Config.NETHER_COAL_ORE) this.generateOres(this.NETHER_COAL_ORE, world, random, chunkX, chunkZ, 12, 0, 128);
+				if (Config.NETHER_GOLD_ORE) this.generateOres(this.NETHER_GOLD_ORE, world, random, chunkX, chunkZ, 10, 10, 117);
+				if (Config.NETHER_WART_ORE) this.generateOres(this.NETHER_WART_ORE, world, random, chunkX, chunkZ, 3, 4, 87);
+				if (Config.BONE_ORE) this.generateOres(this.BONE_ORE, world, random, chunkX, chunkZ, 8, 0, 128);
+				if (Config.FLINT_ORE) this.generateOres(this.FLINT_ORE, world, random, chunkX, chunkZ, 7, 20, 100);
+				if (Config.QUARTZ_ORE) this.generateOres(this.OVERWORLD_QUARTZ_ORE, world, random, chunkX, chunkZ, 2, 4, 24);
+				if (Config.PURPUR_ORE) this.generateOres(this.PURPUR_ORE, world, random, chunkX, chunkZ, 10, 0, 255);
+				if (Config.PRISMARINE_ORE) this.generatePrisOres(this.PRISMARINE_ORE, world, random, chunkX, chunkZ, 4, 6, 48);
 				break;
 		}
 	}

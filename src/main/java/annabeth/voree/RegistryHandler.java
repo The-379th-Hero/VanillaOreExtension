@@ -22,17 +22,17 @@ public class RegistryHandler {
 		
 		IForgeRegistry<Item> reg = event.getRegistry();
 		
-		reg.register(newItemBlock(ModBlocks.BONE_ORE));
-		reg.register(newItemBlock(ModBlocks.FLINT_ORE));
-		reg.register(newItemBlock(ModBlocks.GLOWSTONE_ORE));
-		reg.register(newItemBlock(ModBlocks.NETHER_BONE_ORE));
-		reg.register(newItemBlock(ModBlocks.NETHER_COAL_ORE));
-		reg.register(newItemBlock(ModBlocks.NETHER_WART_ORE));
-		reg.register(newItemBlock(ModBlocks.OVERWORLD_QUARTZ_ORE));
-		reg.register(newItemBlock(ModBlocks.PRISMARINE_ORE));
-		reg.register(newItemBlock(ModBlocks.PURPUR_ORE));
-		reg.register(newItemBlock(ModBlocks.BLAZE_POWDER_ORE));
-		reg.register(newItemBlock(ModBlocks.NETHER_GOLD_ORE));
+		if (Config.BONE_ORE) reg.register(newItemBlock(ModBlocks.BONE_ORE));
+		if (Config.FLINT_ORE) reg.register(newItemBlock(ModBlocks.FLINT_ORE));
+		if (Config.GLOWSTONE_ORE) reg.register(newItemBlock(ModBlocks.GLOWSTONE_ORE));
+		if (Config.NETHER_BONE_ORE) reg.register(newItemBlock(ModBlocks.NETHER_BONE_ORE));
+		if (Config.NETHER_COAL_ORE) reg.register(newItemBlock(ModBlocks.NETHER_COAL_ORE));
+		if (Config.NETHER_WART_ORE) reg.register(newItemBlock(ModBlocks.NETHER_WART_ORE));
+		if (Config.QUARTZ_ORE) reg.register(newItemBlock(ModBlocks.OVERWORLD_QUARTZ_ORE));
+		if (Config.PRISMARINE_ORE) reg.register(newItemBlock(ModBlocks.PRISMARINE_ORE));
+		if (Config.PURPUR_ORE) reg.register(newItemBlock(ModBlocks.PURPUR_ORE));
+		if (Config.BLAZE_POWDER_ORE) reg.register(newItemBlock(ModBlocks.BLAZE_POWDER_ORE));
+		if (Config.NETHER_GOLD_ORE) reg.register(newItemBlock(ModBlocks.NETHER_GOLD_ORE));
 	}
 	
 	@SubscribeEvent
@@ -41,33 +41,33 @@ public class RegistryHandler {
 		
 		IForgeRegistry<Block> reg = event.getRegistry();
 		
-		reg.register(ModBlocks.BONE_ORE);
-		reg.register(ModBlocks.FLINT_ORE);
-		reg.register(ModBlocks.GLOWSTONE_ORE);
-		reg.register(ModBlocks.NETHER_BONE_ORE);
-		reg.register(ModBlocks.NETHER_COAL_ORE);
-		reg.register(ModBlocks.NETHER_WART_ORE);
-		reg.register(ModBlocks.OVERWORLD_QUARTZ_ORE);
-		reg.register(ModBlocks.PRISMARINE_ORE);
-		reg.register(ModBlocks.PURPUR_ORE);
-		reg.register(ModBlocks.BLAZE_POWDER_ORE);
-		reg.register(ModBlocks.NETHER_GOLD_ORE);
+		if (Config.BONE_ORE) reg.register(ModBlocks.BONE_ORE);
+		if (Config.FLINT_ORE) reg.register(ModBlocks.FLINT_ORE);
+		if (Config.GLOWSTONE_ORE) reg.register(ModBlocks.GLOWSTONE_ORE);
+		if (Config.NETHER_BONE_ORE) reg.register(ModBlocks.NETHER_BONE_ORE);
+		if (Config.NETHER_COAL_ORE) reg.register(ModBlocks.NETHER_COAL_ORE);
+		if (Config.NETHER_WART_ORE) reg.register(ModBlocks.NETHER_WART_ORE);
+		if (Config.QUARTZ_ORE) reg.register(ModBlocks.OVERWORLD_QUARTZ_ORE);
+		if (Config.PRISMARINE_ORE) reg.register(ModBlocks.PRISMARINE_ORE);
+		if (Config.PURPUR_ORE) reg.register(ModBlocks.PURPUR_ORE);
+		if (Config.BLAZE_POWDER_ORE) reg.register(ModBlocks.BLAZE_POWDER_ORE);
+		if (Config.NETHER_GOLD_ORE) reg.register(ModBlocks.NETHER_GOLD_ORE);
 	}
 	
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public static void registerModels(ModelRegistryEvent event) {
-		registerModel(ModBlocks.BONE_ORE, 0);
-		registerModel(ModBlocks.FLINT_ORE, 0);
-		registerModel(ModBlocks.GLOWSTONE_ORE, 0);
-		registerModel(ModBlocks.NETHER_BONE_ORE, 0);
-		registerModel(ModBlocks.NETHER_COAL_ORE, 0);
-		registerModel(ModBlocks.NETHER_WART_ORE, 0);
-		registerModel(ModBlocks.OVERWORLD_QUARTZ_ORE, 0);
-		registerModel(ModBlocks.PRISMARINE_ORE, 0);
-		registerModel(ModBlocks.PURPUR_ORE, 0);
-		registerModel(ModBlocks.BLAZE_POWDER_ORE, 0);
-		registerModel(ModBlocks.NETHER_GOLD_ORE, 0);
+		if (Config.BONE_ORE) registerModel(ModBlocks.BONE_ORE, 0);
+		if (Config.FLINT_ORE) registerModel(ModBlocks.FLINT_ORE, 0);
+		if (Config.GLOWSTONE_ORE) registerModel(ModBlocks.GLOWSTONE_ORE, 0);
+		if (Config.NETHER_BONE_ORE) registerModel(ModBlocks.NETHER_BONE_ORE, 0);
+		if (Config.NETHER_COAL_ORE) registerModel(ModBlocks.NETHER_COAL_ORE, 0);
+		if (Config.NETHER_WART_ORE) registerModel(ModBlocks.NETHER_WART_ORE, 0);
+		if (Config.QUARTZ_ORE) registerModel(ModBlocks.OVERWORLD_QUARTZ_ORE, 0);
+		if (Config.PRISMARINE_ORE) registerModel(ModBlocks.PRISMARINE_ORE, 0);
+		if (Config.PURPUR_ORE) registerModel(ModBlocks.PURPUR_ORE, 0);
+		if (Config.BLAZE_POWDER_ORE) registerModel(ModBlocks.BLAZE_POWDER_ORE, 0);
+		if (Config.NETHER_GOLD_ORE) registerModel(ModBlocks.NETHER_GOLD_ORE, 0);
 	}
 	
 	private static ItemBlock newItemBlock(Block block) {
