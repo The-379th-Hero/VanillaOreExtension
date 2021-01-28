@@ -30,17 +30,17 @@ public class OreGen implements IWorldGenerator {
 	
 	public OreGen() {
 		VoreeMain.logger.info("Creating Ore Genrator");
-		if (Config.GLOWSTONE_ORE) this.GLOWSTONE_ORE = new WorldGenMinable(ModBlocks.GLOWSTONE_ORE.getDefaultState(), 7, BlockMatcher.forBlock(Blocks.NETHERRACK));
-		if (Config.QUARTZ_ORE) this.OVERWORLD_QUARTZ_ORE = new WorldGenMinable(ModBlocks.OVERWORLD_QUARTZ_ORE.getDefaultState(), 9, BlockMatcher.forBlock(Blocks.STONE));
-		if (Config.PRISMARINE_ORE) this.PRISMARINE_ORE = new WorldGenMinable(ModBlocks.PRISMARINE_ORE.getDefaultState(), 9, BlockMatcher.forBlock(Blocks.STONE));
-		if (Config.FLINT_ORE) this.FLINT_ORE = new WorldGenMinable(ModBlocks.FLINT_ORE.getDefaultState(), 17, BlockMatcher.forBlock(Blocks.STONE));
-		if (Config.BONE_ORE) this.BONE_ORE = new WorldGenMinable(ModBlocks.BONE_ORE.getDefaultState(), 13, BlockMatcher.forBlock(Blocks.STONE));
-		if (Config.NETHER_BONE_ORE) this.NETHER_BONE_ORE = new WorldGenMinable(ModBlocks.NETHER_BONE_ORE.getDefaultState(), 13, BlockMatcher.forBlock(Blocks.NETHERRACK));
-		if (Config.NETHER_WART_ORE) this.NETHER_WART_ORE = new WorldGenMinable(ModBlocks.NETHER_WART_ORE.getDefaultState(), 10, BlockMatcher.forBlock(Blocks.SOUL_SAND));
-		if (Config.NETHER_COAL_ORE) this.NETHER_COAL_ORE = new WorldGenMinable(ModBlocks.NETHER_COAL_ORE.getDefaultState(), 17, BlockMatcher.forBlock(Blocks.NETHERRACK));
-		if (Config.PURPUR_ORE) this.PURPUR_ORE = new WorldGenMinable(ModBlocks.PURPUR_ORE.getDefaultState(), 9, BlockMatcher.forBlock(Blocks.END_STONE));
-		if (Config.BLAZE_POWDER_ORE) this.BLAZE_POWDER_ORE = new WorldGenMinable(ModBlocks.BLAZE_POWDER_ORE.getDefaultState(), 11, BlockMatcher.forBlock(Blocks.NETHERRACK));
-		if (Config.NETHER_GOLD_ORE) this.NETHER_GOLD_ORE = new WorldGenMinable(ModBlocks.NETHER_GOLD_ORE.getDefaultState(), 10, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		this.GLOWSTONE_ORE = new WorldGenMinable(ModBlocks.GLOWSTONE_ORE.getDefaultState(), 7, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		this.OVERWORLD_QUARTZ_ORE = new WorldGenMinable(ModBlocks.OVERWORLD_QUARTZ_ORE.getDefaultState(), 9, BlockMatcher.forBlock(Blocks.STONE));
+		this.PRISMARINE_ORE = new WorldGenMinable(ModBlocks.PRISMARINE_ORE.getDefaultState(), 9, BlockMatcher.forBlock(Blocks.STONE));
+		this.FLINT_ORE = new WorldGenMinable(ModBlocks.FLINT_ORE.getDefaultState(), 17, BlockMatcher.forBlock(Blocks.STONE));
+		this.BONE_ORE = new WorldGenMinable(ModBlocks.BONE_ORE.getDefaultState(), 13, BlockMatcher.forBlock(Blocks.STONE));
+		this.NETHER_BONE_ORE = new WorldGenMinable(ModBlocks.NETHER_BONE_ORE.getDefaultState(), 13, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		this.NETHER_WART_ORE = new WorldGenMinable(ModBlocks.NETHER_WART_ORE.getDefaultState(), 10, BlockMatcher.forBlock(Blocks.SOUL_SAND));
+		this.NETHER_COAL_ORE = new WorldGenMinable(ModBlocks.NETHER_COAL_ORE.getDefaultState(), 17, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		this.PURPUR_ORE = new WorldGenMinable(ModBlocks.PURPUR_ORE.getDefaultState(), 9, BlockMatcher.forBlock(Blocks.END_STONE));
+		this.BLAZE_POWDER_ORE = new WorldGenMinable(ModBlocks.BLAZE_POWDER_ORE.getDefaultState(), 11, BlockMatcher.forBlock(Blocks.NETHERRACK));
+		this.NETHER_GOLD_ORE = new WorldGenMinable(ModBlocks.NETHER_GOLD_ORE.getDefaultState(), 10, BlockMatcher.forBlock(Blocks.NETHERRACK));
 	}
 	
 	@Override
